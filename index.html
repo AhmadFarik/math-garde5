@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>منصة رياضيات الصف الخامس | المعلم أحمد فضيل فرخ</title>
+<meta name="description" content="منصة تعليمية متكاملة لمادة الرياضيات للصف الخامس الأساسي، الفصل الدراسي الأول، إعداد المعلم أحمد فضيل فرخ">
+<link rel="stylesheet" href="css/main.css">
+<style>
+/* أنماط خاصة بالصفحة الرئيسية فقط */
+.hero{
+  position:relative;overflow:hidden;
+  padding:64px 0 90px;
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--green-pale);color:var(--green-deep);
+  padding:8px 18px;border-radius:999px;font-weight:700;font-size:14.5px;margin-bottom:22px;
+}
+.hero h1{font-size:clamp(32px,5vw,52px);line-height:1.28;font-weight:900;}
+.hero h1 span{color:var(--green);}
+.hero p.lead{font-size:18.5px;color:var(--navy-soft);margin-top:20px;max-width:520px;}
+.hero-actions{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap;}
+.hero-stats{display:flex;gap:30px;margin-top:44px;flex-wrap:wrap;}
+.hero-stat b{display:block;font-family:var(--font-display);font-size:26px;font-weight:800;color:var(--navy);}
+.hero-stat span{font-size:13.5px;color:var(--navy-soft);}
+
+/* رسمة "المسار الرياضي" بدل صورة hero تقليدية */
+.path-art{position:relative;height:420px;}
+.path-art svg{width:100%;height:100%;}
+.path-node{
+  position:absolute;display:flex;flex-direction:column;align-items:center;gap:6px;
+  font-family:var(--font-display);font-weight:800;font-size:13px;color:var(--navy);
+  text-align:center;width:92px;
+}
+.path-node .dot{
+  width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:20px;box-shadow:0 6px 16px rgba(0,0,0,.12);
+}
+
+/* شريط ثقة صغير */
+.trust-strip{
+  background:var(--paper);border-top:1px solid var(--cream-deep);border-bottom:1px solid var(--cream-deep);
+  padding:22px 0;
+}
+.trust-strip .wrap{display:flex;justify-content:space-around;flex-wrap:wrap;gap:18px;text-align:center;}
+.trust-item{font-size:14.5px;color:var(--navy-soft);font-weight:600;display:flex;align-items:center;gap:8px;}
+
+/* شبكة الوحدات */
+.units-grid{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));}
+.unit-card{
+  background:var(--paper);border-radius:var(--radius-l);padding:30px;
+  box-shadow:var(--shadow-card);border:2px solid transparent;
+  transition:border-color .2s, transform .2s;
+  display:flex;flex-direction:column;gap:16px;
+}
+.unit-card:hover{border-color:var(--green-light);transform:translateY(-4px);}
+.unit-card-head{display:flex;align-items:center;gap:16px;}
+.unit-card h3{font-size:19px;font-weight:800;line-height:1.4;}
+.unit-card .unit-num{font-size:13px;color:var(--green-deep);font-weight:700;}
+.unit-lessons{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px;}
+.unit-lessons span{
+  background:var(--cream);color:var(--navy-soft);font-size:12.5px;font-weight:600;
+  padding:5px 12px;border-radius:999px;border:1px solid var(--cream-deep);
+}
+.unit-card .unit-link{
+  margin-top:auto;display:flex;align-items:center;justify-content:space-between;
+  font-weight:700;color:var(--green-deep);font-size:15px;padding-top:8px;border-top:1px dashed var(--cream-deep);
+}
+
+/* لماذا هذه المنصة */
+.why-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
+.why-item{padding:8px;}
+.why-icon{
+  width:52px;height:52px;border-radius:16px;background:var(--amber);
+  display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px;
+}
+.why-item h4{font-size:17.5px;font-weight:800;margin-bottom:8px;}
+.why-item p{color:var(--navy-soft);font-size:15px;}
+
+/* بطاقة المعلم */
+.teacher-strip{
+  background:var(--green-deep);border-radius:var(--radius-l);
+  padding:44px;display:flex;align-items:center;gap:36px;color:#fff;
+  flex-wrap:wrap;
+}
+.teacher-photo{
+  width:110px;height:110px;border-radius:50%;background:var(--green-light);
+  display:flex;align-items:center;justify-content:center;font-family:var(--font-display);
+  font-weight:800;font-size:38px;color:var(--green-deep);flex-shrink:0;
+  border:4px solid rgba(255,255,255,.3);
+}
+.teacher-strip h3{color:#fff;font-size:22px;font-weight:800;margin-bottom:8px;}
+.teacher-strip p{color:#D9EDE0;font-size:15.5px;max-width:560px;}
+.teacher-strip .btn{margin-top:16px;}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;}
+  .path-art{height:300px;order:-1;}
+  .teacher-strip{padding:32px;}
+}
+</style>
+</head>
+<body class="paper-bg">
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">
+      <div class="brand-badge">٥</div>
+      <div class="brand-text">
+        <span class="brand-title">رياضيات الخامس</span>
+        <span class="brand-sub">إعداد المعلم أحمد فضيل فرخ</span>
+      </div>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" class="active">الرئيسية</a>
+      <a href="units/unit1.html">الوحدة الأولى</a>
+      <a href="units/unit2.html">الوحدة الثانية</a>
+      <a href="units/unit3.html">الوحدة الثالثة</a>
+      <a href="units/unit4.html">الوحدة الرابعة</a>
+      <a href="units/unit5.html">الوحدة الخامسة</a>
+      <a href="about.html">عن المعلم</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="فتح القائمة"><span></span></button>
+  </div>
+</header>
+
+<main>
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="hero-eyebrow">✏️ الفصل الدراسي الأول · الصف الخامس الأساسي</span>
+        <h1>رياضيات ممتعة، خطوة بخطوة، <span>حتى تتقنها تماماً</span></h1>
+        <p class="lead">منصة تعليمية شاملة تغطي مادة الرياضيات للصف الخامس بالكامل: شرح مبسّط لكل درس، أمثلة محلولة، وتمارين تفاعلية تصحّح لك نفسها فوراً — كل ذلك من إعداد معلمك أحمد فضيل فرخ.</p>
+        <div class="hero-actions">
+          <a href="units/unit1.html" class="btn btn-primary">🚀 ابدأ من الوحدة الأولى</a>
+          <a href="about.html" class="btn btn-outline">تعرّف على معلمك</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><b>٥</b><span>وحدات دراسية</span></div>
+          <div class="hero-stat"><b>٢٢</b><span>درساً تفصيلياً</span></div>
+          <div class="hero-stat"><b>+١٥٠</b><span>سؤال وتمرين تفاعلي</span></div>
+        </div>
+      </div>
+
+      <div class="path-art" aria-hidden="true">
+        <svg viewBox="0 0 320 420" xmlns="http://www.w3.org/2000/svg">
+          <path d="M60 400 C 40 330, 110 320, 100 260 S 20 190, 50 130 S 150 90, 140 40"
+                fill="none" stroke="#D8CBA0" stroke-width="4" stroke-dasharray="2 14" stroke-linecap="round"/>
+        </svg>
+        <div class="path-node" style="bottom:2%;right:10%;"><div class="dot" style="background:#2F8F5B;">+ −</div>الأعداد</div>
+        <div class="path-node" style="bottom:26%;right:52%;"><div class="dot" style="background:#F5A623;">×÷</div>الضرب والقسمة</div>
+        <div class="path-node" style="bottom:47%;right:8%;"><div class="dot" style="background:#3A5A6C;">✳</div>خصائص الأعداد</div>
+        <div class="path-node" style="bottom:68%;right:48%;"><div class="dot" style="background:#C0533E;">½</div>الكسور</div>
+        <div class="path-node" style="top:2%;right:36%;"><div class="dot" style="background:#1E6B45;">▦</div>تمثيل البيانات</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Trust strip ===== -->
+  <div class="trust-strip">
+    <div class="wrap">
+      <div class="trust-item">📘 مطابقة لمنهاج وزارة التربية والتعليم الأردنية</div>
+      <div class="trust-item">✅ تصحيح فوري للتمارين</div>
+      <div class="trust-item">🎯 مبنية حسب ترتيب كتاب الطالب الرسمي</div>
+    </div>
+  </div>
+
+  <!-- ===== الوحدات ===== -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">محتوى الفصل الأول</span>
+        <h2 class="section-title">اختر الوحدة وابدأ التعلّم</h2>
+        <p class="section-desc">كل وحدة تحتوي على دروسها كاملة بالشرح والأمثلة والتمارين، بالإضافة إلى اختبار قصير في نهايتها.</p>
+      </div>
+
+      <div class="grid units-grid">
+        <a href="units/unit1.html" class="unit-card">
+          <div class="unit-card-head">
+            <div class="unit-badge" style="background:#2F8F5B;">١</div>
+            <div>
+              <div class="unit-num">الوحدة الأولى</div>
+              <h3>الأعداد: جمعها وطرحها</h3>
+            </div>
+          </div>
+          <div class="unit-lessons">
+            <span>القيمة المنزلية</span><span>المقارنة والترتيب</span><span>الجمع والطرح</span><span>الأعداد السالبة</span><span>حل المسألة بجدول</span>
+          </div>
+          <div class="unit-link"><span>ابدأ الوحدة</span><span>◀</span></div>
+        </a>
+
+        <a href="units/unit2.html" class="unit-card">
+          <div class="unit-card-head">
+            <div class="unit-badge" style="background:#F5A623;">٢</div>
+            <div>
+              <div class="unit-num">الوحدة الثانية</div>
+              <h3>الضرب والقسمة</h3>
+            </div>
+          </div>
+          <div class="unit-lessons">
+            <span>الضرب الذهني</span><span>تقدير النواتج</span><span>الضرب بمنزلة ومنزلتين</span><span>القسمة بلا/مع باقٍ</span>
+          </div>
+          <div class="unit-link"><span>ابدأ الوحدة</span><span>◀</span></div>
+        </a>
+
+        <a href="units/unit3.html" class="unit-card">
+          <div class="unit-card-head">
+            <div class="unit-badge" style="background:#3A5A6C;">٣</div>
+            <div>
+              <div class="unit-num">الوحدة الثالثة</div>
+              <h3>خصائص الأعداد</h3>
+            </div>
+          </div>
+          <div class="unit-lessons">
+            <span>قابلية القسمة</span><span>العوامل الأولية</span><span>العامل المشترك الأكبر</span><span>المضاعف المشترك الأصغر</span><span>الجذر التربيعي</span>
+          </div>
+          <div class="unit-link"><span>ابدأ الوحدة</span><span>◀</span></div>
+        </a>
+
+        <a href="units/unit4.html" class="unit-card">
+          <div class="unit-card-head">
+            <div class="unit-badge" style="background:#C0533E;">٤</div>
+            <div>
+              <div class="unit-num">الوحدة الرابعة</div>
+              <h3>الكسور والعمليات عليها</h3>
+            </div>
+          </div>
+          <div class="unit-lessons">
+            <span>الأعداد الكسرية</span><span>الجمع والطرح</span><span>الضرب</span><span>القسمة</span>
+          </div>
+          <div class="unit-link"><span>ابدأ الوحدة</span><span>◀</span></div>
+        </a>
+
+        <a href="units/unit5.html" class="unit-card">
+          <div class="unit-card-head">
+            <div class="unit-badge" style="background:#1E6B45;">٥</div>
+            <div>
+              <div class="unit-num">الوحدة الخامسة</div>
+              <h3>تمثيل البيانات وتفسيرها</h3>
+            </div>
+          </div>
+          <div class="unit-lessons">
+            <span>السؤال الإحصائي</span><span>المستوى الإحداثي</span><span>التمثيل بالخطوط</span><span>الأعمدة المزدوجة</span>
+          </div>
+          <div class="unit-link"><span>ابدأ الوحدة</span><span>◀</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== لماذا هذه المنصة ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">مميزات المنصة</span>
+        <h2 class="section-title">صُممت لتساعدك فعلاً</h2>
+      </div>
+      <div class="grid why-grid">
+        <div class="why-item">
+          <div class="why-icon">📖</div>
+          <h4>شرح مبسّط لكل درس</h4>
+          <p>كل فكرة رياضية مشروحة بخطوات واضحة ولغة قريبة من مستواك.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">✍️</div>
+          <h4>أمثلة محلولة</h4>
+          <p>مثال محلول خطوة بخطوة قبل كل تمرين، لتفهم الطريقة أولاً.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">⚡</div>
+          <h4>تصحيح فوري</h4>
+          <p>تمارين تفاعلية تعرف نتيجتك مباشرة مع تلميحات عند الخطأ.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">🏆</div>
+          <h4>اختبار نهاية كل وحدة</h4>
+          <p>تحقق من إتقانك للوحدة كاملة قبل الانتقال للتي تليها.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== المعلم ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <div class="teacher-strip">
+        <div class="teacher-photo">أ.ف</div>
+        <div style="flex:1;min-width:240px;">
+          <h3>المعلم أحمد فضيل فرخ</h3>
+          <p>معلم رياضيات في وزارة التربية والتعليم الأردنية منذ عام ٢٠١٦، وسفير في برنامج eTwinning الأوروبي. أعدّ هذه المنصة بالكامل ليضع بين يديك تجربة تعلّم واضحة ومنظمة لمادة الرياضيات.</p>
+          <a href="about.html" class="btn btn-ghost">تعرّف أكثر على معلمك ◀</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-title">رياضيات الخامس</div>
+        <p style="color:#B9CBD3;font-size:14.5px;max-width:280px;">منصة تعليمية لمادة الرياضيات، الصف الخامس الأساسي، الفصل الدراسي الأول — إعداد المعلم أحمد فضيل فرخ.</p>
+      </div>
+      <div>
+        <div class="footer-title">الوحدات</div>
+        <ul class="footer-links">
+          <li><a href="units/unit1.html">الأعداد: جمعها وطرحها</a></li>
+          <li><a href="units/unit2.html">الضرب والقسمة</a></li>
+          <li><a href="units/unit3.html">خصائص الأعداد</a></li>
+          <li><a href="units/unit4.html">الكسور</a></li>
+          <li><a href="units/unit5.html">تمثيل البيانات</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-title">تواصل</div>
+        <ul class="footer-links">
+          <li><a href="about.html">عن المعلم</a></li>
+          <li><a href="mailto:ahmad0farkh@gmail.com">ahmad0farkh@gmail.com</a></li>
+          <li><a href="tel:+962787712341" style="direction:ltr;display:block;text-align:right;">+962 78 771 2341</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© ٢٠٢٦ — إعداد المعلم أحمد فضيل فرخ. جميع الحقوق محفوظة.</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('navToggle').addEventListener('click',function(){
+  document.getElementById('navLinks').classList.toggle('open');
+});
+</script>
+</body>
+</html>
